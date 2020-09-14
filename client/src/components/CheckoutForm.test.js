@@ -12,7 +12,7 @@ test("form header renders", () => {
   
   test("form shows success message on submit with form details", () => {
     const { getByText } = render(<CheckoutForm />);
-    const button = screen.getByText(/Checkout/i);
+    const button = screen.getByText(/Checkouts/i);
     fireEvent.click(button);
     const successMessage = getByText(/You have ordered some plants! Woo-hoo!/i);
     expect(successMessage).toBeInTheDocument();
