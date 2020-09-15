@@ -28,15 +28,38 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
-1. Explain how to build stateful class components.
+1. Explain how to build stateful class components. 
+
+To build stateful class, we use class instead of function in which it extends the component to bind its base parent component. Then constructor and super are called to access its parent props and methods, and then we call this.state and put in the initial value for state. This state can be updated through the component’s life cycle that includes mounting, updating, and unmounting the component.
 
 2. Describe the different phases of the component lifecycle.
 
+The phases are Mounting, Updating, and Unmounting.
+
+Mounting is basically the component mounting onto the DOM. Can use the componentDidMount() method.
+
+Updating is where the state/props updates and re-renders. Usually updates are from when user clicks,types or any other user events.
+
+Unmounting is where the component unmounts from the DOM
+
 3. Demonstrate an understanding of class component lifecycle methods.
+
+the lifecycle starts with componentdidmount this is where you do your axios calls
+
+then it moves onto componentdidupdate this will update the state if it is changing from the componentdidmount
+
+after that componentwillunmount is called this is where the component is removed from the DOM.
 
 4. Define stateful logic.
 
+any code that uses state. 
+
+
 5. Describe how to test a React component with React Testing Library.
+
+Use Arrange, Act, Assert. First, we render the component that we want to test. Next, we pick a query to find the element we are looking. Last, we make sure that the element is rendered correctly on the DOM.
+
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
