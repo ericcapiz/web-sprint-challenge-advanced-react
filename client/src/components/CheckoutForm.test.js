@@ -13,33 +13,33 @@ test("form header renders", () => {
   
   test("form shows success message on submit with form details", () => {
     render(<CheckoutForm />);
-    const firstNameValue = 'Eric';
-    const lastNameValue = 'Capiz';
+    const fValue = 'Eric';
+    const lValue = 'Capiz';
     const addressValue = '123 fake st';
     const cityValue = 'Chicago';
     const stateValue = 'Illinois';
     const zipValue = '60647';
 
-    const firstNameInput = screen.getByLabelText(/First Name:/i);
-    const lastNameInput = screen.getByLabelText(/Last Name:/i);
-    const addressInput = screen.getByLabelText(/Address:/i);
-    const cityInput = screen.getByLabelText(/City:/i);
-    const stateInput = screen.getByLabelText(/State:/i);
-    const zipInput = screen.getByLabelText(/Zip:/i);
+    const fName = screen.getByLabelText(/First Name:/i);
+    const lName = screen.getByLabelText(/Last Name:/i);
+    const address = screen.getByLabelText(/Address:/i);
+    const city = screen.getByLabelText(/City:/i);
+    const state = screen.getByLabelText(/State:/i);
+    const zip = screen.getByLabelText(/Zip:/i);
 
-    userEvent.type(firstNameInput, firstNameValue);
-    userEvent.type(lastNameInput, lastNameValue);
-    userEvent.type(addressInput, addressValue);
-    userEvent.type(cityInput, cityValue);
-    userEvent.type(stateInput, stateValue);
-    userEvent.type(zipInput, zipValue);
+    userEvent.type(fName, fValue);
+    userEvent.type(lName, lValue);
+    userEvent.type(address, addressValue);
+    userEvent.type(city, cityValue);
+    userEvent.type(state, stateValue);
+    userEvent.type(zip, zipValue);
     
-    expect(firstNameInput).toHaveValue(firstNameValue);
-    expect(lastNameInput).toHaveValue(lastNameValue);
-    expect(addressInput).toHaveValue(addressValue);
-    expect(cityInput).toHaveValue(cityValue);
-    expect(stateInput).toHaveValue(stateValue);
-    expect(zipInput).toHaveValue(zipValue);
+    expect(fName).toHaveValue(fValue);
+    expect(lName).toHaveValue(lValue);
+    expect(address).toHaveValue(addressValue);
+    expect(city).toHaveValue(cityValue);
+    expect(state).toHaveValue(stateValue);
+    expect(zip).toHaveValue(zipValue);
 
     const submitButton = screen.getByTestId('checkouts');
     userEvent.click(submitButton);
